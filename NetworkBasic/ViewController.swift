@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     
     func configureBarButtonImem(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(playButtonClicked))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(starButtonClicked))
     }
     
     @objc func playButtonClicked(_ sender: UIButton){
@@ -50,6 +52,12 @@ class ViewController: UIViewController {
         vc.type = .add
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
+    }
+    
+    //codebased view 띄우는 방법
+    @objc func starButtonClicked(){
+        let vc = LottoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     //self: 클래스의 인스턴스
